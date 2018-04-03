@@ -1,0 +1,57 @@
+
+<html>
+<head>
+<style>
+.effet {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.effet:hover {
+    background-color: #008CBA;
+    color: white;
+}
+</style>
+
+<body>
+<p><B>Nouveau Build</B></p>
+
+
+<form method="post" action = "(% url "myapp.views" %)" charset="UTF-8">{% csrf_token %}
+
+<Table border="0">
+   <tr><td>Nom du projet : </td><td><input type="text" name="nom" /></td></tr>
+   <tr><td>Réference de projet :</td><td><input type="text" name="ref" /></td></tr>
+   <tr><td>Projet Agile : </td><td><input type="checkbox" name="pa" value="pa">
+   <tr><td>Build template : </td><td><select name ="BP" size="1"> <option selected> Github 
+                                                    <option> Git
+                                                    <option> GitLab
+                                                    <option> SVN
+                                                    <option> Gradle </select></td></tr>
+                                                                                  
+  <tr><td> environnement :</td><td><select name ="Env" size="1"> <option selected> Recette 
+                                                   <option> Dev
+                                                    <option> Prod </select></td></tr>
+  <tr><td>Détails :</td><td><input type="Dt" name="Dt" /></td></tr>
+</Table>
+<Table border="0">
+   <tr><td></td><td></td>
+   
+  <td><INPUT class="effet"TYPE="submit" NAME="valider" VALUE="enregistrer">
+  <INPUT  class="effet" TYPE="reset" NAME="annuler" VALUE="annuler">
+
+<form method="post" action="traitement2.php">
+  <INPUT  class="effet" TYPE="submit" NAME="nom" VALUE="Build"> 
+
+</form></td></tr>
+
+
+</table>
+</form>
+</body>
+</html>
+
+
+
+
